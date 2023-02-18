@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avToolTipBug="clr-namespace:AvToolTipBug"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvToolTipBug.MainWindow"
+        Title="AvToolTipBug">
+    <Window.KeyBindings>
+        <KeyBinding Gesture="Ctrl+z" Command="{Binding UndoCommand}" />
+        <KeyBinding Gesture="Ctrl+Shift+z" Command="{Binding RedoCommand}" />
+    </Window.KeyBindings>
+    <Border x:Name="RootBorder" 
+            BorderThickness="2" 
+            Background="transparent" 
+            Focusable="True">
+        <ScrollViewer>
+            <ItemsControl Items="{Binding $parent[avToolTipBug:MainWindow].Tooltips}">
+                <ItemsControl.DataTemplates>
+                    <DataTemplate DataType="avToolTipBug:ToolTipDto">
+                        <ToggleSwitch>
+                            <ToolTip.ShowDelay>
+                                0
+                            </ToolTip.ShowDelay>
+                            <ToolTip.Tip>
+                                My Super TIP
+                            </ToolTip.Tip>
+                        </ToggleSwitch>
+                    </DataTemplate>
+                </ItemsControl.DataTemplates>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel
+                            Orientation="Vertical"
+                            Margin="25, 21"
+                            VerticalAlignment="Center"
+                            Height="260" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+    </Border>
+
+
+</Window>

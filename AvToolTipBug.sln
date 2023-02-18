@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvToolTipBug", "AvToolTipBug\AvToolTipBug.csproj", "{2A17C64E-FDDD-47B8-A04B-21AF9033A8CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A17C64E-FDDD-47B8-A04B-21AF9033A8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A17C64E-FDDD-47B8-A04B-21AF9033A8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A17C64E-FDDD-47B8-A04B-21AF9033A8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A17C64E-FDDD-47B8-A04B-21AF9033A8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AvToolTipBug.App"
+             RequestedThemeVariant="Light">
+    <Application.Styles>
+        <FluentTheme/>
+        <StyleInclude Source="TooltipStyles.axaml"></StyleInclude>
+        
+        <Style Selector="TextBlock">
+            <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts#Roboto"></Setter>
+        </Style>
+        
+        <Style Selector="TextBox">
+            <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts#Roboto"></Setter>
+        </Style>
+        
+        <Style Selector="Button">
+            <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts#Roboto"></Setter>
+        </Style>
+        
+        <Style Selector="ContentPresenter">
+            <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts#Roboto"></Setter>
+        </Style>
+    </Application.Styles>
+</Application>

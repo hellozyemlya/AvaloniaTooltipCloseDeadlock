@@ -1,0 +1,78 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avToolTipBug="clr-namespace:AvToolTipBug">
+    <Styles.Resources>
+        <avToolTipBug:TextToIntegerConverter x:Key="TextToIntegerConverter" />
+        <ControlTheme x:Key="{x:Type avToolTipBug:ToolTipContent}" TargetType="avToolTipBug:ToolTipContent">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <StackPanel>
+                        <TextBlock IsVisible="{TemplateBinding Title, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                                   MaxWidth="{TemplateBinding MaxWidth}"
+                                   Text="{TemplateBinding Title}"
+                                   FontSize="12" FontStyle="Normal" FontWeight="400" LineHeight="20"
+                                   TextAlignment="Center" MinHeight="20" Background="{TemplateBinding Background}" />
+                        <ContentPresenter Name="PART_ContentPresenter"
+                                          MaxWidth="{TemplateBinding MaxWidth}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          TextBlock.TextWrapping="Wrap"
+                                          FontSize="10" FontStyle="Normal" FontWeight="400"
+                                          LineHeight="12" Background="{TemplateBinding Background}">
+                        </ContentPresenter>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter>
+        </ControlTheme>
+    </Styles.Resources>
+    <Design.DataContext>
+        <avToolTipBug:ToolTipContent></avToolTipBug:ToolTipContent>
+    </Design.DataContext>
+    <Design.PreviewWith>
+        <Button Width="140">
+            <ToolTip.Tip>
+                <avToolTipBug:ToolTipContent Title="Hello"
+                                         Content="World">
+                </avToolTipBug:ToolTipContent>
+            </ToolTip.Tip>
+        </Button>
+    </Design.PreviewWith>
+
+    <Style Selector="ToolTip">
+        <Setter Property="Foreground" Value="black" />
+        <Setter Property="Background" Value="red" />
+        <Setter Property="BorderBrush" Value="green" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="MaxWidth" Value="320" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Opacity" Value="0" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.15" />
+            </Transitions>
+        </Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Width="140"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Margin="0,2,10,10"
+                        >
+                    <Border.BoxShadow>
+                        <BoxShadows>2 2 10 #000000</BoxShadows>
+                    </Border.BoxShadow>
+                    <ContentPresenter Name="PART_ContentPresenter"
+                                      Padding="{TemplateBinding Padding}"
+                                      MaxWidth="{TemplateBinding MaxWidth}"
+                                      Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      FontWeight="400">
+                    </ContentPresenter>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>
