@@ -6,6 +6,7 @@
         <FluentTheme/>
         <StyleInclude Source="TooltipStyles.axaml"></StyleInclude>
         
+        <!-- this styles will cause error more frequently -->
         <Style Selector="TextBlock">
             <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts#Roboto"></Setter>
         </Style>
@@ -21,5 +22,21 @@
         <Style Selector="ContentPresenter">
             <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts#Roboto"></Setter>
         </Style>
+        <!-- this as well, but less frequently -->
+        <!-- <Style Selector="TextBlock"> -->
+        <!--     <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts/Roboto#Roboto"></Setter> -->
+        <!-- </Style> -->
+        <!-- -->
+        <!-- <Style Selector="TextBox"> -->
+        <!--     <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts/Roboto#Roboto"></Setter> -->
+        <!-- </Style> -->
+        <!-- -->
+        <!-- <Style Selector="Button"> -->
+        <!--     <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts/Roboto#Roboto"></Setter> -->
+        <!-- </Style> -->
+        <!-- -->
+        <!-- <Style Selector="ContentPresenter"> -->
+        <!--     <Setter Property="FontFamily" Value="avares://AvToolTipBug/Assets/Fonts/Roboto#Roboto"></Setter> -->
+        <!-- </Style> -->
     </Application.Styles>
 </Application>
